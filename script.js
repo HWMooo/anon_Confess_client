@@ -267,8 +267,6 @@ function fetchCon(string = "") {
           
           if (event.key === 'Enter') {
             let targetId = commentBox.parentElement.firstElementChild.textContent;
-            alert(targetId);
-            alert(commentBox.value);
             if(commentBox.value !== ''){
             fetch("https://anonconfess.herokuapp.com/confessions/postComment", {
               method: 'POST',
