@@ -52,7 +52,7 @@ function removeAll() {
 
 function fetchCon(string = "") {
   button.disabled = true;
-  fetch('http://localhost:3000/confessions' + string).then(function (response) {
+  fetch('https://anonconfess.herokuapp.com/confessions' + string).then(function (response) {
     response.json().then(function (json) {
       for (item in json) {
         let giftoAdd = document.createElement('img');
@@ -173,7 +173,7 @@ function fetchCon(string = "") {
         function addALike() {
           let confessioniD = happyReaction.parentElement.firstElementChild.textContent
           happyReaction.style.backgroundColor = 'rgb(16, 87, 16)';
-          fetch("http://localhost:3000/confessions/reaction", {
+          fetch("https://anonconfess.herokuapp.com/confessions/reaction", {
             method: 'POST',
             body: JSON.stringify({
               idConfession: confessioniD, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
@@ -192,7 +192,7 @@ function fetchCon(string = "") {
         function addAShock() {
           let confessioniD = shockReaction.parentElement.firstElementChild.textContent
           shockReaction.style.backgroundColor = 'yellow';
-          fetch("http://localhost:3000/confessions/reaction", {
+          fetch("https://anonconfess.herokuapp.com/confessions/reaction", {
             method: 'POST',
             body: JSON.stringify({
               idConfession: confessioniD, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
@@ -211,7 +211,7 @@ function fetchCon(string = "") {
         function addAHate() {
           let confessioniD = hateReaction.parentElement.firstElementChild.textContent;
           hateReaction.style.backgroundColor = 'red';
-          fetch("http://localhost:3000/confessions/reaction", {
+          fetch("https://anonconfess.herokuapp.com/confessions/reaction", {
             method: 'POST',
             body: JSON.stringify({
               idConfession: confessioniD, // id of the confession where we want to add the reaction || id of confession containing the comment we want to add the raction
@@ -241,7 +241,7 @@ function fetchCon(string = "") {
   
   
             
-            fetch("http://localhost:3000/confessions/delete", {
+            fetch("https://anonconfess.herokuapp.com/confessions/delete", {
               method : 'DELETE',
               body: JSON.stringify({
                  id : confessioniD, 
@@ -270,7 +270,7 @@ function fetchCon(string = "") {
             alert(targetId);
             alert(commentBox.value);
             if(commentBox.value !== ''){
-            fetch("http://localhost:3000/confessions/postComment", {
+            fetch("https://anonconfess.herokuapp.com/confessions/postComment", {
               method: 'POST',
               body: JSON.stringify({
                 id: parseInt(targetId), // id of the confession where we want to add the comment
@@ -309,7 +309,7 @@ document.getElementById("submitConfession").addEventListener("click", event => {
   event.preventDefault()
 
 
-  fetch("http://localhost:3000/confessions/post", {
+  fetch("https://anonconfess.herokuapp.com/confessions/post", {
     method: 'POST',
     body: JSON.stringify({
       title: document.getElementById("title").value,
