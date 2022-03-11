@@ -399,6 +399,8 @@ img{
         height: 4.5vh;
     }
 
+    
+
    
 
 
@@ -406,7 +408,7 @@ img{
 
 
 
-    #postedRow{
+    .postedRow{
         display: flex;
         flex-direction: column;
         transform: translate3d(41vw, 10vw, 0);
@@ -428,6 +430,11 @@ img{
         margin-bottom: -4%;
         position: relative;
         z-index: 1;
+    }
+
+    .screenContainer{
+        display: flex;
+        flex-direction: column;
     }
 
 
